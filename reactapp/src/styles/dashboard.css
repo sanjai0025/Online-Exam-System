@@ -1,0 +1,323 @@
+/* Light Theme Dashboard */
+:root {
+    --royal-blue: #1e3a8a;
+    --royal-blue-light: #3b82f6;
+    --gold-accent: #fbbf24;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-800: #1f2937;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    min-height: calc(100vh - 80px);
+    padding: 2rem 0;
+    background: var(--light-bg);
+    color: var(--gray-800);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 24px;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+.welcome-content {
+    text-align: center;
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 800;
+}
+
+.welcome-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.welcome-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 1.2rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.welcome-btn:hover {
+    background: rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.5);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.dashboard-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 24px;
+    transition: all 0.4s ease;
+    border: 2px solid var(--gray-200);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--royal-blue-light);
+}
+
+.card-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.card-description {
+    color: var(--gray-800);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.card-action {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-action:hover {
+    transform: translateY(-3px) scale(1.05);
+    color: white;
+    text-decoration: none;
+}
+
+/* Stats Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid var(--gray-200);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--royal-blue-light);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    color: var(--gray-800);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Loading and Error States */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    font-size: 1.2rem;
+    color: var(--gray-800);
+    background: var(--white);
+    border-radius: 16px;
+    margin: 2rem 0;
+    padding: 3rem;
+    border: 2px solid var(--gray-200);
+}
+
+.error-message {
+    background: #dc2626;
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    font-weight: 600;
+    border: 1px solid #f87171;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem 0;
+    }
+    
+    .welcome-section {
+        padding: 3rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .welcome-title {
+        font-size: 2rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .welcome-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .welcome-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dashboard-card {
+        padding: 2rem;
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-section {
+        padding: 2rem 1rem;
+    }
+    
+    .dashboard-card {
+        padding: 1.5rem;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
