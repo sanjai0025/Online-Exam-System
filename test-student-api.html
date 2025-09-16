@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Student API</title>
+</head>
+<body>
+    <h1>Test Student API</h1>
+    <button onclick="testGetExams()">Test Get Available Exams</button>
+    <div id="result"></div>
+
+    <script>
+        async function testGetExams() {
+            try {
+                const response = await fetch('http://localhost:8080/api/student/exams', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                const data = await response.json();
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
